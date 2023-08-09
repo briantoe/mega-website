@@ -1,0 +1,15 @@
+[
+  {
+    "name": "John Doe",
+    "instrument": "CEO",
+    "description": "John Doe is the CEO of our company...",
+    "image": "profile_image_url_1.jpg"
+  },
+  {
+    "name": "Jane Smith",
+    "instrument": "CFO",
+    "description": "Jane Smith is the CFO of our company...",
+    "image": "profile_image_url_2.jpg"
+  }
+  // Add more profiles as needed
+]
