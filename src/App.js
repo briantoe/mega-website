@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import DarkThemeProvider from './provider/DarkThemeProvider';
 import { Layout } from './pages/Layout';
 import { Home } from './pages/Home';
-import AboutPage from './pages/AboutPage';
+import { About } from './pages/About';
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path='about' element={<AboutPage />} />
+          <Route path='about' element={<About />} />
         </Route>
       </Routes>
     </DarkThemeProvider>
