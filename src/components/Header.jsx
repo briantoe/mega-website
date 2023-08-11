@@ -1,10 +1,6 @@
-import React from "react";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import { styled } from "@mui/system";
-import CardMedia from "@mui/material/CardMedia";
-import NavBar from "./NavBar";
+import React from 'react';
+import { AppBar, Toolbar, Typography, CardMedia } from '@mui/material';
+import { styled } from '@mui/system';
 
 // import logo from './logo.png'; // Import your logo image
 
@@ -22,10 +18,10 @@ import NavBar from "./NavBar";
 //   },
 // }));
 
-const HeaderContent = styled("div")({
-  display: "flex",
-  justifyContent: "center", // Center horizontally
-  alignItems: "center",
+const HeaderContent = styled('div')({
+  display: 'flex',
+  justifyContent: 'center', // Center horizontally
+  alignItems: 'center',
   //   alignContent: "center"
   // paddingTop: "3px",
 });
@@ -33,22 +29,22 @@ const HeaderContent = styled("div")({
 const Media = styled(CardMedia)({
   width: 100,
   height: 100,
-  objectFit: "cover",
+  objectFit: 'cover',
   //   marginRight: (theme) => theme.spacing(2),
-  margin: "20px", // Adjust as needed
+  margin: '20px', // Adjust as needed
 });
 
-const Header = () => {
+export const Header = () => {
   return (
-    <AppBar position="static">
+    <AppBar position='static'>
       <Toolbar>
         <HeaderContent>
           <Media
-            component="img"
-            src="https://megaensemble.carrd.co/assets/images/image01.jpg"
-            alt="MEGA Ensemble logo"
+            component='img'
+            src='https://megaensemble.carrd.co/assets/images/image01.jpg'
+            alt='MEGA Ensemble logo'
           />
-          <Typography variant="h2" style={{ color: "#FF7575" }}>
+          <Typography variant='h2' style={{ color: '#FF7575' }}>
             MEGA Ensemble
           </Typography>
         </HeaderContent>
@@ -56,5 +52,3 @@ const Header = () => {
     </AppBar>
   );
 };
-
-export default Header;
