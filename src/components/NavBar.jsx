@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import {
   AppBar,
   Box,
@@ -12,30 +13,16 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
-const pages = ['Home', 'About Us', 'Contact Us', 'Socials'];
+const pages = [
+  { title: 'Home', slug: '' },
+  { title: 'About Us', slug: 'about' },
+  { title: 'Contact Us', slug: 'contact' },
+  { title: 'Socials', slug: 'socials' },
+];
 
 export const NavBar = () => {
-  // State to manage mobile menu opening
-  const [anchorElNav, setAnchorElNav] = useState(null);
-  // State to keep track of the currently active page
-  const [currentPage, setCurrentPage] = useState('Home'); // Initialize with the first page
-
-  // Handler for opening the mobile menu
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  // Handler for closing the mobile menu
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  // Handler for clicking a page button
-  const handlePageClick = (page) => {
-    // Set the clicked page as the current page and close the menu
-    setCurrentPage(page);
-    handleCloseNavMenu();
-  };
+  const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <AppBar position='static'>
@@ -49,14 +36,12 @@ export const NavBar = () => {
               aria-label='menu'
               aria-controls='menu-appbar'
               aria-haspopup='true'
-              onClick={handleOpenNavMenu}
               color='inherit'>
               <MenuIcon />
             </IconButton>
             {/* Mobile menu content */}
             <Menu
               id='menu-appbar'
-              anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: 'bottom',
                 horizontal: 'left',
@@ -66,15 +51,13 @@ export const NavBar = () => {
                 vertical: 'top',
                 horizontal: 'left',
               }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: 'block', md: 'none' },
               }}>
               {/* Map through pages to create menu items */}
               {pages.map((page) => (
-                <MenuItem key={page} onClick={() => handlePageClick(page)}>
-                  <Typography textAlign='center'>{page}</Typography>
+                <MenuItem key={page.title} onClick={() => navigate(page.slug)}>
+                  <Typography textAlign='center'>{page.title}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -85,14 +68,15 @@ export const NavBar = () => {
             {/* Map through pages to create buttons */}
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={() => handlePageClick(page)}
+                key={page.title}
+                onClick={() => navigate(page.slug)}
                 sx={{
                   // Apply primary color if it's the current page, otherwise white
-                  color: currentPage === page ? 'primary.main' : 'white',
+                  color:
+                    location.pathname === page.slug ? 'primary.main' : 'white',
                   display: 'block',
                 }}>
-                {page}
+                {page.title}
               </Button>
             ))}
           </Box>
