@@ -1,7 +1,7 @@
-import React from "react";
-import MemberCards from "./MemberCards";
+import React from 'react';
+import { MemberCards } from '../components';
 
-const AboutPage = () => {
+export const About = () => {
   return (
     <>
       {/* <h1>About Us</h1> */}
@@ -10,5 +10,3 @@ const AboutPage = () => {
     </>
   );
 };
-
-export default AboutPage;
