@@ -73,7 +73,9 @@ export const NavBar = () => {
                 sx={{
                   // Apply primary color if it's the current page, otherwise white
                   color:
-                    location.pathname === page.slug ? 'primary.main' : 'white',
+                    location.pathname === `/${page.slug}`
+                      ? 'primary.main'
+                      : 'white',
                   display: 'block',
                 }}>
                 {page.title}
