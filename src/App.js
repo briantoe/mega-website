@@ -1,15 +1,19 @@
-import React from "react";
-import DarkThemeProvider from "./provider/DarkThemeProvider";
-import AboutPage from "./components/AboutPage";
-import Header from "./components/Header";
-import NavBar from "./components/NavBar";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import DarkThemeProvider from './provider/DarkThemeProvider';
+import { Layout } from './pages/Layout';
+import { Home } from './pages/Home';
+import AboutPage from './pages/AboutPage';
 
 const App = () => {
   return (
     <DarkThemeProvider>
-      <NavBar></NavBar>
-      <Header></Header>
-      <AboutPage></AboutPage>
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path='about' element={<AboutPage />} />
+        </Route>
+      </Routes>
     </DarkThemeProvider>
   );
 };
