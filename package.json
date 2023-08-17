@@ -23,8 +23,7 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest",
-      "plugin:storybook/recommended"
+      "react-app/jest"
     ]
   },
   "browserslist": {
@@ -40,20 +39,9 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.2.1",
-    "@storybook/addon-interactions": "^7.2.1",
-    "@storybook/addon-links": "^7.2.1",
-    "@storybook/addon-onboarding": "^1.0.8",
-    "@storybook/blocks": "^7.2.1",
-    "@storybook/preset-create-react-app": "^7.2.1",
-    "@storybook/react": "^7.2.1",
-    "@storybook/react-webpack5": "^7.2.1",
-    "@storybook/testing-library": "^0.2.0",
     "@vitejs/plugin-react": "^4.0.4",
     "babel-plugin-named-exports-order": "^0.0.2",
-    "eslint-plugin-storybook": "^0.6.13",
     "prop-types": "^15.8.1",
-    "storybook": "^7.2.1",
     "vite": "^4.4.9",
     "vite-plugin-svgr": "^3.2.0",
     "vite-tsconfig-paths": "^4.2.0",
