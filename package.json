@@ -16,11 +16,18 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+<<<<<<< HEAD
     "start": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
+=======
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+>>>>>>> dev-brian
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +49,7 @@
     ]
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@storybook/addon-essentials": "^7.2.1",
     "@storybook/addon-interactions": "^7.2.1",
     "@storybook/addon-links": "^7.2.1",
@@ -59,6 +67,11 @@
     "vite": "^4.4.9",
     "vite-plugin-svgr": "^3.2.0",
     "vite-tsconfig-paths": "^4.2.0",
+=======
+    "babel-plugin-named-exports-order": "^0.0.2",
+    "eslint-plugin-storybook": "^0.6.13",
+    "prop-types": "^15.8.1",
+>>>>>>> dev-brian
     "webpack": "^5.88.2"
   }
 }
